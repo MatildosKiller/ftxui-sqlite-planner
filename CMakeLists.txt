@@ -1,19 +1,25 @@
 cmake_minimum_required(VERSION 3.16)
 project(FTXUI_SQliet_planner)
 
-set(CMAKE_CXX_STANDART 20)
-set(CMAKE_CXX_STANDART_REQUIRED ON)
+# Исправление опечатки в названии стандарта
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(FTXUI REQUIRED ftxui)
+# Находим библиотеки через vcpkg (не через pkg-config)
+find_package(ftxui REQUIRED)
 find_package(SQLite3 REQUIRED)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/database.cpp)
-
-target_link_libraries(${PROJECT_NAME}
-                    ${FTXUI_LIBRARIES}
-                    SQLite::SQLite3
+# Создаём исполняемый файл
+add_executable(${PROJECT_NAME}
+  src/main.cpp
+  src/database.cpp
 )
 
-target_include_directories(${PROJECT_NAME} PRIVATE include ${FTXUI_INCLUDE_DIRS})
+# Указываем директорию для поиска заголовков проекта
+target_include_directories(${PROJECT_NAME} PRIVATE include)
 
+# Подключаем библиотеки
+target_link_libraries(${PROJECT_NAME}
+  ftxui::ftxui      # FTXUI из vcpkg
+  SQLite::SQLite3    # SQLite из vcpkg
+)

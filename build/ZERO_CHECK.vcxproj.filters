@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="F:\TRAINING\ftxui\ftxui-sqlite-planner\build\CMakeFiles\8330b167c3e2c64d1d2fdfa474ef1d3f\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D91A2C56-AE7D-3891-9B69-1EE167CA6A29}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

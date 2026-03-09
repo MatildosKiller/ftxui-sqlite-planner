@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\TRAINING\ftxui\ftxui-sqlite-planner\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\TRAINING\ftxui\ftxui-sqlite-planner\src\database.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\TRAINING\ftxui\ftxui-sqlite-planner\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BB17289B-76F0-3433-8F1A-C05CE8EC754B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
