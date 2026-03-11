@@ -13,7 +13,7 @@ struct Student {
     std::string timezone;
 };
 
-struct Event {
+struct UserEvent {
     int id;
     std::string topic;
     int duration;
@@ -32,10 +32,10 @@ public:
     
     bool createTables();
     bool insertStudent(const Student& student);
-    bool insertEvent(const Event& event);
+    bool insertEvent(const UserEvent& event);
     std::vector<Student> getAllStudents();
-    std::vector<Event> getEventsByStudent(int studentId);
-    bool insertEvent(const Event& event);
+    std::vector<UserEvent> getEventsByStudent(int studentId);
+   
 };
 
 #endif

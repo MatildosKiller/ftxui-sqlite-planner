@@ -4,7 +4,7 @@
 
 Database::Database(const std::string& dbPath){
     if(sqlite3_open(dbPath.c_str(),&db)!=SQLITE_OK){
-        std::cerr<<"cannot open database: " << sqlite3_errmsg(db)
+        std::cerr << "cannot open database: " << sqlite3_errmsg(db);
     }else{
         createTables();
     }
@@ -95,8 +95,8 @@ std::vector<Student> Database::getAllStudents() {
     return students;
 }
 
-std::vector<Event> Database::getEventsByStudent(int studentId) {
-    std::vector<Event> events;
+std::vector<UserEvent> Database::getEventsByStudent(int studentId) {
+    std::vector<UserEvent> events;
     const char* sql = R"(
         SELECT EventId, Topic, Duration, Frequency,
                Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Parent
@@ -108,7 +108,7 @@ std::vector<Event> Database::getEventsByStudent(int studentId) {
         sqlite3_bind_int(stmt, 1, studentId);
 
         while (sqlite3_step(stmt) == SQLITE_ROW) {
-            Event event;
+            UserEvent event;
             event.id = sqlite3_column_int(stmt, 0);
             event.topic = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
             event.duration = sqlite3_column_int(stmt, 2);
@@ -128,7 +128,7 @@ std::vector<Event> Database::getEventsByStudent(int studentId) {
     return events;
 }
 
-bool Database::insertEvent(const Event& event) {
+bool Database::insertEvent(const UserEvent& event) {
     // Проверка существования студента
     const char* checkStudentSql = "SELECT 1 FROM Students WHERE StudentId = ?";
     sqlite3_stmt* checkStmt;

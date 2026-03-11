@@ -1,3 +1,3 @@
-F:/TRAINING/ftxui/ftxui-sqlite-planner/build/CMakeFiles/FTXUI_SQliet_planner.dir
+F:/TRAINING/ftxui/ftxui-sqlite-planner/build/CMakeFiles/FTXUI_SQLite_planner.dir
 F:/TRAINING/ftxui/ftxui-sqlite-planner/build/CMakeFiles/ALL_BUILD.dir
 F:/TRAINING/ftxui/ftxui-sqlite-planner/build/CMakeFiles/ZERO_CHECK.dir
